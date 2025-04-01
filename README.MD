@@ -22,3 +22,7 @@
     'npm i babel-loader@9.1.3 @babel/core@7.23.7 @babel/preset-env@7.23.7 --save-dev
  * instalar o day.js
     'npm i dayjs@1.11.10
+
+
+/*libs para bibliotecas, utils para utilitarios*/
+/*modules para todos os arquivos da aplicação com suas responsabilidades*/
