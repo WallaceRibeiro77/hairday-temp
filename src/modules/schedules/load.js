@@ -1,14 +1,21 @@
+import { scheduleFrtchByDay } from "../../services/schedule-fetch-by-day.js";
+import { schedulesShow } from "./show.js";
 import { hoursLoad } from "../form/hours-load.js";
 
 const selectedDate = document.querySelector("#date")
 
-export function schedulesDay(){
+export async function schedulesDay(){
     //obtem a data do input
-    const date = selectedDate.value    
+    const date = selectedDate.value
+    
+    //buscar na api os agendamentos para carregar do lado direito da tela
+    const dailySchedules = await scheduleFrtchByDay({ date })
 
+    //exibe os agendamentos
+    schedulesShow({ dailySchedules })
+    
     //renderiza as horas disponiveis
     hoursLoad({date})
     
 }
-//buscar na api os agendamentos para carregar do lado direito da tela
 // carregar os horarios disponiveis(horario futuro + nao agendado) do lado esquerdo(form)
