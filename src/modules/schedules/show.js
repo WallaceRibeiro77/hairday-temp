@@ -2,8 +2,8 @@ import dayjs from "dayjs";
 
 //selecionar as sessões manha, tarde e noite
 const periodMorning = document.querySelector("#period-morning")
-const periodAfternoon = document.querySelector("#period-Afternoon")
-const periodNight = document.querySelector("#period-Night")
+const periodAfternoon = document.querySelector("#period-afternoon")
+const periodNight = document.querySelector("#period-night")
 
 export function schedulesShow({ dailySchedules }){
     try {
@@ -40,7 +40,7 @@ export function schedulesShow({ dailySchedules }){
             //renderizar o agendamento na sessao (manha, tarde ou noite)
             if(hour <= 12){
                 periodMorning.appendChild(item)
-            }else if(hour >12 && hour <= 18){
+            }else if(hour > 12 && hour <= 18){
                 periodAfternoon.appendChild(item)
             }else{
                 periodNight.appendChild(item)
